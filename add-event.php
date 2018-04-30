@@ -15,7 +15,7 @@
 
 	
 	
-	$dupesql = "SELECT * FROM events where (username = '$username' AND artist = '$artist' AND thumbnail = '$url' AND date = '$date')";
+	$dupesql = "SELECT * FROM events where (username = '$username' AND artist = '$artist' AND thumbail = '$url' AND date = '$date')";
 
 	$duperaw = mysqli_query($conn, $dupesql);
 	if (!$duperaw) die($conn->error);
@@ -25,7 +25,7 @@
 		echo $duplicate;
 
 	} else {
-		$sql = "INSERT INTO events (username, artist, thumbnail, date, venue) VALUES ('$username', '$artist', '$url', '$date', '$venue')";
+		$sql = "INSERT INTO events (username, artist, thumbail, date, venue) VALUES ('$username', '$artist', '$url', '$date', '$venue')";
 		mysqli_query ($conn, $sql);
 		$Added = "Added Event";
 		echo $Added;
